@@ -12,6 +12,20 @@
             <h1 class="header-title">eBay Calculator (MY)</h1>
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg" alt="Flag of Malaysia" class="malaysia-flag">
         </div>
+
+        <!-- Store Subscription Radio Buttons -->
+        <label><strong>Store Subscription:</strong></label>
+        <div id="store-subscription">
+            <label>
+                <input type="radio" name="store" value="starter" checked>
+                Starter Store
+            </label>
+            <label>
+                <input type="radio" name="store" value="basic">
+                Basic Store or Higher
+            </label>
+        </div>
+
         <form id="calculator-form">
             <!-- Input Fields -->
             <label for="item-cost">Item Cost (MYR):</label>
@@ -31,18 +45,11 @@
 
             <h3>Fees Percentage</h3>
             <label for="sales-tax">Sales Tax (%):</label>
-            <input type="number" id="sales-tax" placeholder="Enter sales tax percentage" value="6">
+            <input type="number" id="sales-tax" placeholder="Enter sales tax percentage" value="7">
 
             <label for="category-rate">Category Rate (%):</label>
             <select id="category-rate">
-                <option value="12.35">Everything Else (12.35%)</option>
-                <option value="11.35">Ebay Motors (11.35%)</option>
-                <option value="9.35">Ebay Motor Parts (9.35%)</option>
-                <option value="14.95">Movies & Music (14.95%)</option>
-                <option value="13">Jewelry & Watches (13%)</option>
-                <option value="9.35">Stamps (9.35%)</option>
-                <option value="9">Coins & Paper Money (9%)</option>
-                <option value="5">Collectible Card Games (5%)</option>
+                <!-- Dynamic Options Added Here -->
             </select>
 
             <label for="international-rate">International Rate (%):</label>
@@ -90,14 +97,14 @@
             <p>Total Cost (MYR): <span id="total-cost-myr">-</span></p>
             <p>Profits (MYR): <span id="profits-myr">-</span></p>
         </div>
-
+    
         <!-- Notes Section -->
         <div id="notes">
             <h4>Notes:</h4>
             <ul>
-                <li>Sales tax rates vary by state and depends on the buyer's location.</li>
+                <li>Sales tax rates vary by state and depend on the buyer's location.</li>
                 <li>Payoneer charges 1 USD for payments received under 100 USD, with Order Earnings (MYR) calculated accordingly.</li>
-                <li>All fee percentages are set to default values but can be changed if needed</li>
+                <li>All fee percentages are set to default values but can be changed if needed.</li>
             </ul>
         </div>
     </div>
