@@ -15,12 +15,12 @@ body {
 
 .header-title {
     margin: 0;
-    font-size: 24px; /* Reduced font size */
+    font-size: 24px;
     font-weight: bold;
 }
 
 .malaysia-flag {
-    width: 40px; /* Slightly increased flag size */
+    width: 40px;
     height: auto;
 }
 
@@ -55,8 +55,8 @@ form select {
 #selling-price,
 #shipping-charged,
 #withdrawal-rate {
-    background-color: #fffae6; /* Light yellow background */
-    border: 1px solid #ffd966; /* Yellow border */
+    background-color: #fffae6;
+    border: 1px solid #ffd966;
 }
 
 #item-cost:focus,
@@ -64,8 +64,8 @@ form select {
 #selling-price:focus,
 #shipping-charged:focus,
 #withdrawal-rate:focus {
-    background-color: #fff5cc; /* Slightly lighter yellow on focus */
-    border-color: #ffa500; /* Orange border on focus */
+    background-color: #fff5cc;
+    border-color: #ffa500;
     outline: none;
 }
 
@@ -77,7 +77,7 @@ form select {
 
 .calculate-btn,
 .reset-btn {
-    background-color: #28a745; /* Original button color */
+    background-color: #28a745;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -88,7 +88,7 @@ form select {
 }
 
 .reset-btn {
-    background-color: #dc3545; /* Original reset button color */
+    background-color: #dc3545;
 }
 
 .calculate-btn:hover,
@@ -96,21 +96,37 @@ form select {
     opacity: 0.9;
 }
 
+/* Adjusted margin for results label */
 .results-label {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin: 10px 0; /* Reduced margin to bring it closer to the title */
 }
 
 .section-label {
-    color: blue; /* Original section label color */
+    color: blue;
     font-weight: bold;
 }
 
+/* Aligning Results Section Vertically */
+#results p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
 #results p span {
+    text-align: right;
+    min-width: 150px; /* Adjust the width as necessary */
     font-weight: bold;
-    color: #555; /* Original text color for results */
+    color: #555;
+}
+
+#notes ul {
+    padding-left: 20px;
+    list-style: disc;
+    color: #666;
 }
