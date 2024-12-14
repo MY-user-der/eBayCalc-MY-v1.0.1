@@ -1,6 +1,6 @@
 const starterRates = [
     { label: "Most Categories (13.25%)", value: "13.25" },
-    { label: "Books & Magazines, DVDs Movies (14.95%)", value: "14.95" },
+    { label: "Books & Magazines, DVDs Movies, Music (14.95%)", value: "14.95" },
     { label: "Coins & Paper Money (13.25%)", value: "13.25" }, 
     { label: "Musical Instruments (6.35%)", value: "6.35" },
     { label: "Jewelry & Watches (15%)", value: "15" },
