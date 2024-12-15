@@ -54,7 +54,8 @@ form select {
 #shipping-cost,
 #selling-price,
 #shipping-charged,
-#withdrawal-rate {
+#withdrawal-rate,
+#ad-fee {
     background-color: #fffae6;
     border: 1px solid #ffd966;
 }
@@ -63,7 +64,8 @@ form select {
 #shipping-cost:focus,
 #selling-price:focus,
 #shipping-charged:focus,
-#withdrawal-rate:focus {
+#withdrawal-rate:focus,
+#ad-fee:focus {
     background-color: #fff5cc;
     border-color: #ffa500;
     outline: none;
