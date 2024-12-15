@@ -58,7 +58,7 @@ document.getElementById("calculate-btn").addEventListener("click", () => {
         const volumeDiscountRate = parseFloat(document.getElementById("volume-discount").value) / 100 || 0.002;
         const perOrderFee = parseFloat(document.getElementById("per-order-fee").value) || 0.4;
         const sstRate = parseFloat(document.getElementById("sst").value) / 100 || 0.08;
-        const adFeeRate = parseFloat(document.getElementById("ad-fee").value) / 100 || 0.05;
+        const adFeeRate = parseFloat(document.getElementById("ad-fee").value) / 100 || 0.00;
 
         const basePrice = sellingPrice + shippingCharge;
         const salesTax = basePrice * salesTaxRate;
