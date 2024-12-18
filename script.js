@@ -1,7 +1,8 @@
+// Category rates based on the store subscription type
 const starterRates = [
     { label: "Most Categories (13.25%)", value: "13.25" },
     { label: "Books & Magazines, DVDs Movies, Music (14.95%)", value: "14.95" },
-    { label: "Coins & Paper Money (13.25%)", value: "13.25" }, 
+    { label: "Coins & Paper Money (13.25%)", value: "13.25" },
     { label: "Musical Instruments (6.35%)", value: "6.35" },
     { label: "Jewelry & Watches (15%)", value: "15" },
     { label: "Athletic Shoes (13.25%)", value: "13.25" },
@@ -24,11 +25,12 @@ const basicRates = [
     { label: "Stamps (9.35%)", value: "9.35" },
 ];
 
-// Dynamically populate the dropdown based on store subscription
+// Dynamically populate the category rate dropdown based on store selection
 document.querySelectorAll('input[name="store"]').forEach((radio) => {
     radio.addEventListener("change", (e) => {
         const categoryRate = document.getElementById("category-rate");
-        categoryRate.innerHTML = ""; // Clear current options
+        categoryRate.innerHTML = ""; // Clear existing options
+
         const rates = e.target.value === "starter" ? starterRates : basicRates;
 
         rates.forEach((rate) => {
@@ -40,12 +42,13 @@ document.querySelectorAll('input[name="store"]').forEach((radio) => {
     });
 });
 
-// Initialize dropdown with Starter Store rates on page load
+// Trigger the category rate update on page load for default store selection (starter)
 document.querySelector('input[name="store"][value="starter"]').dispatchEvent(new Event("change"));
 
 // Calculation Logic
 document.getElementById("calculate-btn").addEventListener("click", () => {
     try {
+        // Retrieve input values and ensure they're parsed as floats
         const itemCost = parseFloat(document.getElementById("item-cost").value) || 0;
         const shippingCost = parseFloat(document.getElementById("shipping-cost").value) || 0;
         const sellingPrice = parseFloat(document.getElementById("selling-price").value) || 0;
@@ -116,4 +119,23 @@ document.getElementById("reset-btn").addEventListener("click", () => {
     document.querySelectorAll("#results p span").forEach((span) => {
         span.textContent = "-";
     });
+});
+
+// Function to restrict the input to only allow up to two decimals
+function limitDecimalInput(event) {
+    const input = event.target;
+    let value = input.value;
+
+    // Regular expression to match numbers with up to 2 decimals
+    const regex = /^\d+(\.\d{0,2})?$/;
+
+    if (!regex.test(value)) {
+        // Remove the last character if it exceeds two decimals
+        input.value = value.slice(0, -1);
+    }
+}
+
+// Attach event listeners to all the relevant fields to limit decimals to two
+document.querySelectorAll('#item-cost, #shipping-cost, #selling-price, #shipping-charged, #withdrawal-rate, #ad-fee, #volume-discount, #per-order-fee, #sst, #sales-tax, #international-rate').forEach((inputField) => {
+    inputField.addEventListener('input', limitDecimalInput);
 });
