@@ -1,55 +1,80 @@
+/* Import Google Font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Using Roboto font */
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Header Styling */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding: 10px;
 }
 
+/* Header Title */
 .header-title {
     margin: 0;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
+    color: #333;
 }
 
+/* Flag Image */
 .malaysia-flag {
     width: 40px;
     height: auto;
 }
 
+/* Container Styling */
 .container {
     max-width: 800px;
     margin: 30px auto;
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition effect */
 }
 
+/* Form Label */
 form label {
     display: block;
     margin: 10px 0 5px;
-    font-weight: bold;
+    font-weight: 500;
+    color: #444;
 }
 
+/* Form Input Fields */
 form input,
 form select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth transition effect */
 }
 
-/* Highlight fields for user key-in */
+/* Focused Fields Styling */
+form input:focus,
+form select:focus {
+    border-color: #3498db;
+    background-color: #f0f8ff;
+    outline: none;
+}
+
+/* Highlight Fields for User Key-In */
 #item-cost,
 #shipping-cost,
 #selling-price,
@@ -60,21 +85,12 @@ form select {
     border: 1px solid #ffd966;
 }
 
-#item-cost:focus,
-#shipping-cost:focus,
-#selling-price:focus,
-#shipping-charged:focus,
-#withdrawal-rate:focus,
-#ad-fee:focus {
-    background-color: #fff5cc;
-    border-color: #ffa500;
-    outline: none;
-}
-
+/* Buttons Styling */
 .buttons {
-    display: flex;
-    gap: 10px;
     margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center align the buttons */
+    gap: 10px; /* Add spacing between buttons */
 }
 
 .calculate-btn,
@@ -82,13 +98,16 @@ form select {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Smooth transition effect */
+    width: 150px; /* Ensuring consistent button size */
 }
 
+/* Reset Button */
 .reset-btn {
     background-color: #dc3545;
 }
@@ -96,21 +115,22 @@ form select {
 .calculate-btn:hover,
 .reset-btn:hover {
     opacity: 0.9;
+    transform: translateY(-3px); /* Subtle hover effect */
 }
 
-/* Adjusted margin for results label */
+/* Results Section */
 .results-label {
-    background-color: black;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
-    margin: 10px 0; /* Reduced margin to bring it closer to the title */
+    margin: 10px 0;
 }
 
 .section-label {
-    color: blue;
-    font-weight: bold;
+    color: #3498db;
+    font-weight: 500;
 }
 
 /* Aligning Results Section Vertically */
@@ -122,7 +142,7 @@ form select {
 
 #results p span {
     text-align: right;
-    min-width: 150px; /* Adjust the width as necessary */
+    min-width: 150px;
     font-weight: bold;
     color: #555;
 }
@@ -131,4 +151,78 @@ form select {
     padding-left: 20px;
     list-style: disc;
     color: #666;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile Devices (max-width 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    form input,
+    form select {
+        padding: 12px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+
+    .calculate-btn,
+    .reset-btn {
+        width: 150px; /* Ensuring consistent button size */
+        padding: 12px;
+    }
+}
+
+/* Tablets (max-width 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .header-title {
+        font-size: 22px;
+    }
+
+    .buttons {
+        flex-direction: row; /* Align buttons in a row */
+        justify-content: center; /* Center align buttons */
+    }
+
+    .calculate-btn,
+    .reset-btn {
+        width: 150px; /* Ensuring consistent button size */
+        padding: 12px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .header-title {
+        font-size: 26px;
+    }
+
+    .buttons {
+        flex-direction: row; /* Align buttons in a row */
+        justify-content: center; /* Center align buttons */
+    }
+
+    .calculate-btn,
+    .reset-btn {
+        width: 150px; /* Ensuring consistent button size */
+        padding: 12px;
+    }
 }
