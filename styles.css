@@ -109,7 +109,7 @@ form select:focus {
 
 /* Reset Button */
 .reset-btn {
-    background-color: #dc3545;
+    background-color: #E53238;
 }
 
 .calculate-btn:hover,
@@ -120,7 +120,7 @@ form select:focus {
 
 /* Results Section */
 .results-label {
-    background-color: #2c3e50;
+    background-color: #0064D2;
     color: white;
     text-align: center;
     padding: 12px;
